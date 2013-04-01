@@ -1,0 +1,22 @@
+<hazelcast
+	xmlns="http://www.hazelcast.com/schema/config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.hazelcast.com/schema/config hazelcast-basic.xsd">
+
+	<properties>
+	    <property name="hazelcast.socket.bind.any">false</property>
+	    <property name="hazelcast.local.localAddress">${CLUSTER_IP_ADDRESS}</property>
+	</properties>
+    <group>
+        <name>entropy</name>
+    </group>
+    <network>
+        <port auto-increment="true">15000</port>
+        <join>
+            <tcp-ip enabled="true">
+                <interface>${CLUSTER_IP_ADDRESS}</interface>
+            </tcp-ip>
+        </join>
+    </network>
+
+</hazelcast>

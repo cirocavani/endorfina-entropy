@@ -1,0 +1,18 @@
+<p>This is the Login view.</p>
+
+<div ng-show="sessionID == ''">
+  <form>
+    <label for="username">Username</label>
+    <input type="text" id="username" ng-model="username"/>
+    <label for="password">Password</label>
+    <input type="password" id="password" ng-model="password"/>
+    <br><br>
+    <input type="submit" value="Login" ng-click="login()"/>
+  </form>
+</div>
+
+<div ng-show="sessionID != ''">
+  <h3>Logged in as {{username}}!</h3>
+  
+  <p><a href="#/site">Site</a></p>
+</div>

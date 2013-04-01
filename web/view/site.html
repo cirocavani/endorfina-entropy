@@ -1,0 +1,12 @@
+<p>This is the Site view.</p>
+
+<div ng-show="sessionID != ''">
+  <h3>Hello {{username}}!</h3>
+
+  <form>
+    <label for="message">Message</label>
+    <input type="text" id="message" ng-model="message"/>
+    <br><br>
+    <input type="submit" value="Send" ng-click="send()"/>
+  </form>
+</div>
