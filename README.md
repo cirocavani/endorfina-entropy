@@ -20,8 +20,8 @@ Featuring
 * Vert.x 1.3.1
 * Groovy 2.0
 * MongoDB 2.2
-
 * AngularJS 1.0.5
+* AngularUI Bootstrap 0.2.0
 * Bootstrap 2.3.1
 
 Missing
@@ -41,6 +41,7 @@ Download Vert.x, latest 1.3.1
 	tar xzf vert.x-1.3.1.final.tar.gz --directory=/srv/Software
 
 (replace `vert.x-1.3.1.final/conf/cluster.xml` with `misc/cluster.xml`)
+
 (edit `vert.x-1.3.1.final/conf/cluster.xml` replacing both `${CLUSTER_IP_ADDRESS}` with `127.0.0.1`)
 
 _MongoDB_
@@ -109,7 +110,7 @@ _Entropy Web_
 
 1. Main Menu, 'Run' > 'External Tools' > 'External Tools Configurations...'
 1. Window 'External Tools', toolbar 'New launch configuration'
-   * Name: `Entropy Agent`
+   * Name: `Entropy Web`
    * Location: `/srv/Software/vert.x-1.3.1.final/bin/vertx`
    * Working Directory: `${workspace_loc:/entropy}`
    * Arguments: `run src/Web.groovy -conf conf/web.config -cluster -cluster-host 127.0.0.1 -cluster-port 25500`
@@ -233,3 +234,8 @@ Replace `<GIT CLONE>/.openshift/action_hooks/start` with `misc/openshift_start`
 Replace `<GIT CLONE>/.openshift/action_hooks/stop` with `misc/openshift_stop`
 
 Remove `<GIT CLONE>/diy/`
+
+	git remote add upstream git@github.com:cirocavani/endorfina-entropy.git
+	git pull -s recursive -X theirs upstream master
+	git commit -a -m 'Setup'
+	git push -u origin master
