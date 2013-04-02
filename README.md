@@ -14,6 +14,11 @@ https://entropy-cavani.rhcloud.com/
 Gears
 -----
 
+**vert.x cluster**
+
+* Client web app communicates with Agent throw Server web app.
+* Client is JavaScript/Browser, Server is Groovy/JVM1 and Agent is Groovy/JVM2
+
 Featuring
 ---------
 
@@ -27,10 +32,14 @@ Featuring
 Missing
 -------
 
+* Build infrastructure (Gradle?)
+* A good UI (client web app / frontend)
+* AccountService (sign up with email check)
+
 Configuration
 -------------
 
-**Dev Eclipse**
+**Eclipse Dev**
 
 Download MondoDB, latest from 2.2
 
@@ -173,9 +182,9 @@ _MongoDB_
 	> "user" : "system",
 	> "readOnly" : false,
 	> "pwd" : "...hex...",
-	> "_id" : ObjectId("...pw...")
+	> "_id" : ObjectId("...hex...")
 	> }
-	db.auth('system', 'UQggOxcY')
+	db.auth('system', '...pw...')
 	> 1
 
 _Environment_
