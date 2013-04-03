@@ -16,7 +16,7 @@ Gears
 
 **vert.x cluster**
 
-* Client web app communicates with Agent throw Server web app.
+* Client communicates with Agent through Server.
 * Client is JavaScript/Browser, Server is Groovy/JVM1 and Agent is Groovy/JVM2
 
 Featuring
@@ -33,6 +33,7 @@ Missing
 -------
 
 * Build infrastructure (Gradle?)
+* Unit and Integration tests
 * A good UI (client web app / frontend)
 * AccountService (sign up with email check)
 
