@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. $OPENSHIFT_DATA_DIR/.bash_profile
+
 cd $OPENSHIFT_REPO_DIR
 
 echo "{" > conf/web.config
