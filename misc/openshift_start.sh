@@ -28,6 +28,8 @@ sed -e "s/\${CLUSTER_IP_ADDRESS}/`echo ${OPENSHIFT_INTERNAL_IP}`/g" misc/cluster
 
 export CLASSPATH=${CLASSPATH}:${OPENSHIFT_REPO_DIR}conf
 
+export VERTX_MODS=$OPENSHIFT_DATA_DIR/mods
+
 nohup bash -c "exec 'vertx' 'run' 'src/Web.groovy' -conf conf/web.config -cluster -cluster-host ${OPENSHIFT_INTERNAL_IP} -cluster-port 25500 &> ${OPENSHIFT_DIY_LOG_DIR}web.log" &> /dev/null &
 echo $! > .openshift/web.pid
 nohup bash -c "exec 'vertx' 'run' 'src/Agent.groovy' -conf conf/agent.config -cluster -cluster-host ${OPENSHIFT_INTERNAL_IP} -cluster-port 25501 &> ${OPENSHIFT_DIY_LOG_DIR}agent.log" &> /dev/null &
