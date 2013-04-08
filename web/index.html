@@ -4,14 +4,56 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Entropy</title>
-  <link rel="stylesheet" href="css/style.css"/>
   <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css"/>
+<style type="text/css">
+html { 
+  background: url(/img/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+</style>
 </head>
 <body>
 
-<div ng-view></div>
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">Entropy</a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="active"><a href="/#/home">Home</a></li>
+          <li><a href="/#/about">About</a></li>
+          <li><a href="/#/contact">Contact</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
 
-<div>Entropy: v<span app-version></span></div>
+<div class="container">
+	<div class="row">
+		<div class="span8">
+			<!-- content  -->
+			<div ng-view></div>
+		</div>
+		<div class="span4">
+			<!-- sidebar -->
+		</div>
+	</div>
+	<div class="row">
+		<hr />
+		<footer>
+			<p>
+				Entropy v<span app-version></span> - a site by Ciro Cavani, <a href="https://cirocavani.wordpress.com/">https://cirocavani.wordpress.com/</a>
+			</p>
+		</footer>
+	</div>
+</div>
+
+<div></div>
 
 <script src="lib/sockjs/sockjs.js"></script>
 <script src="lib/angular/angular.js"></script>

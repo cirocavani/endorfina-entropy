@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-function LoginCtrl($scope, EventBus, Credential) {
+function HomeCtrl($scope, EventBus, Credential) {
 	$scope.sessionID = Credential.sessionID();
 	$scope.username = Credential.username();
 	$scope.password = '';
@@ -27,7 +27,7 @@ function LoginCtrl($scope, EventBus, Credential) {
 
 }
 
-function SiteCtrl($scope, EventBus, Credential) {
+function MainCtrl($scope, EventBus, Credential) {
 	$scope.sessionID = Credential.sessionID();
 	$scope.username = Credential.username();
 	$scope.message = '';
