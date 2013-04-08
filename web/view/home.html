@@ -1,16 +1,34 @@
 <div ng-show="sessionID == ''">
-  <form>
-    <label for="username">Username</label>
-    <input type="text" id="username" ng-model="username"/>
-    <label for="password">Password</label>
-    <input type="password" id="password" ng-model="password"/>
-    <br><br>
-    <input type="submit" value="Sign In" ng-click="login()"/>
-  </form>
+	<div class="row">
+		<div class="span8">
+			<!-- content  -->
+		</div>
+		<div class="span4">
+			<form class="sign_form">
+			  <label for="signin_principal">Email</label>
+			  <input type="text" id="signin_principal" class="input-block-level" ng-model="signin_principal"/>
+			  <label for="signin_secret">Password</label>
+			  <input type="password" id="signin_secret" class="input-block-level" ng-model="signin_secret"/>
+			  <br>
+			  <input type="submit" value="Sign In" class="btn btn-primary" ng-click="signin()"/>
+			</form>
+			<form class="sign_form">
+			  <label for="signup_name">Full Name</label>
+			  <input type="text" id="signup_name" class="input-block-level" ng-model="signup_name"/>
+			  <label for="signup_principal">Email</label>
+			  <input type="text" id="signup_principal" class="input-block-level" ng-model="signup_principal"/>
+			  <label for="signup_secret">Password</label>
+			  <input type="password" id="signup_secret" class="input-block-level" ng-model="signup_secret"/>
+			  <br>
+			  <input type="submit" value="Sign Up" class="btn btn-primary" ng-click="signup()"/>
+			</form>
+		</div>
+	</div>
 </div>
 
 <div ng-show="sessionID != ''">
-  <h3>Logged in as {{username}}!</h3>
+  <h3>Logged in as {{principal}}!</h3>
+  <form><input type="submit" value="Sign Out" class="btn btn-primary" ng-click="signout()"/></form>
   
   <p><a href="/#/main">Main</a></p>
 </div>

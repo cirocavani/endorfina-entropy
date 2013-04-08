@@ -22,13 +22,10 @@ body {
 	margin-bottom: 5px;
 }
 
-.sign_form table {
-	width: 100%;
-}
-
 .sign_form input[type="text"],.sign_form input[type="password"] {
 	font-size: 16px;
 	height: auto;
+	width: 100%;
 	margin-bottom: 5px;
 	padding: 7px 9px;
 }

@@ -8,18 +8,22 @@ serviceModule.value('version', '1.0');
 
 serviceModule.factory('Credential', function() {
 	var sessionID = '';
-    var username = '';
+    var principal = '';
 
 	return {
-		setup: function(id, u) {
+		setup: function(id, p) {
 			sessionID = id;
-			username = u;
+			principal = p;
+		},
+		reset: function() {
+			sessionID = '';
+			principal = '';
 		},
 		sessionID: function() {
 			return sessionID;
 		},
-		username: function() {
-			return username;
+		principal: function() {
+			return principal;
 		}
 	};
 });

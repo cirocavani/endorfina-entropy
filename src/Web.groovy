@@ -6,7 +6,11 @@ def webServerConf = [
 	bridge: true,
 	inbound_permitted: [
 		[
-			address: 'vertx.basicauthmanager.login',
+			address: 'accountmanager.login',
+		],
+		[
+			address: 'accountmanager.logout',
+			requires_auth : true,
 		],
 		[
 			address : 'agent',
@@ -14,6 +18,11 @@ def webServerConf = [
 		],
 	],
 	outbound_permitted: [[:]],
+	auth_address: 'accountmanager.authorise',
+]
+
+def authConf = [
+	address: 'accountmanager',
 ]
 
 def mailConf = [
@@ -55,7 +64,7 @@ container.with {
 	}
 
 	// Deploy an auth manager to handle the authentication
-	deployModule('vertx.auth-mgr-v1.1')
+	deployModule('vertx.auth-mgr-v1.1', authConf)
 
 	// Deploy a Mailer (SMTP) module
 	//deployModule('vertx.mailer-v1.1', mailConf)
