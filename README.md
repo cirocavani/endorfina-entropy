@@ -1,7 +1,7 @@
 Endorfina Entropy
 =================
 
-Web Application for Agent Systems.
+Vert.x 1 Web Application (cluster).
 
 (GitHub)
 
